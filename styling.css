@@ -1,6 +1,6 @@
 .logo {
     cursor: pointer;
-    width: 7%;
+    width: 30%;
     border-radius: 100%;
 }
 .navbar_links, li, a {
@@ -23,7 +23,7 @@
 }
 li, a {
     font-family:monospace;
-    font-weight: 500;
+    font-weight: 300;
     font-size: 16px;
     color: aliceblue;
     text-align: center;
@@ -48,7 +48,7 @@ footer {
 
 .card {
     box-shadow: 0 4px 8px 0 black;
-    max-width: 500px;
+    max-width: 400px;
     margin: auto;
     margin-top: 20px;
     margin-bottom: 50px;
