@@ -86,6 +86,36 @@ footer {
     font-size: 22px;
   }
 
+  /* delete after practice*/
+
+  form {
+    color: black;
+    margin-left: 40%;
+    align-items: center;
+  }
+
+  h1 {
+    color: blanchedalmond;
+    text-align: center;
+  }
+
+  table {
+    margin-left: 75%;
+  }
+  p {
+    color: blueviolet;
+    font-size: 30px;
+    text-align: center;
+    text-shadow: 50%;
+  }
+  nav {
+    align-items: center;
+  }
+  footer {
+    font-size: 50px;
+    padding-right: 75%;
+  }
+
 
 
 
