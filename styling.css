@@ -7,11 +7,20 @@
     list-style: none;
     display: inline-block;
     padding: 0px 5px;
+    text-decoration: none;
+}
+.navbar_links, li, a:hover {
+    color: cornflowerblue;
 }
 
 .center {
     text-align: center;
     font-size: 50px;
+}
+.allHeaders {
+    font-style: italic;
+    text-align: center;
+    font-size: 45px;
 }
 
 * {
@@ -26,6 +35,7 @@ li, a {
     font-weight: 300;
     font-size: 16px;
     color: aliceblue;
+    font-size: 25px;
     text-align: center;
     padding: auto;
 }
@@ -41,6 +51,7 @@ footer {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    margin-top: 40%;
 }
 .picture {
     border-radius: 50%;
@@ -53,6 +64,21 @@ footer {
     margin-top: 20px;
     margin-bottom: 50px;
     text-align: center;
+  }
+
+  .projectcard {
+    box-shadow: 0 4px 8px 0 black;
+    max-width: 500px;
+    margin-top: 20px;
+    margin: auto;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  .project-container {
+    display: flex;
+    margin-left: 25%;
+    margin-right: 25%;
+    flex-direction: row;
   }
   
   .title {
