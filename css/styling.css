@@ -51,10 +51,14 @@ footer {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin-top: 40%;
+    margin-top: 10%;
 }
 .picture {
     border-radius: 50%;
+}
+
+#bug {
+    color: red;
 }
 
 .project-picture {
