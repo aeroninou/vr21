@@ -17,7 +17,7 @@
     text-align: center;
     font-size: 50px;
 }
-.allHeaders {
+.all-headers {
     font-style: italic;
     text-align: center;
     font-size: 45px;
@@ -68,7 +68,7 @@ footer {
 
 .card {
     box-shadow: 10px 10px 10px 0 black;
-    max-width: 400px;
+    max-width: 350px;
     margin: auto;
     margin-top: 20px;
     margin-bottom: 50px;
@@ -78,14 +78,14 @@ footer {
   .projectcard {
     box-shadow: 10px 10px 10px 0 black;
     max-width: 500px;
-    margin: auto;
+    margin: 10px;
     margin-bottom: 50px;
     text-align: center;
   }
 
   .resume-card {
     box-shadow: 10px 10px 10px 0 black;
-    max-width: 500px;
+    max-width: 350px;
     margin: auto;
     margin-bottom: 50px;
     text-align: center;
@@ -96,6 +96,7 @@ footer {
     margin-left: 25%;
     margin-right: 25%;
     flex-direction: row;
+    justify-content: center;
   }
   
   .title {
