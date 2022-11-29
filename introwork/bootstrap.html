@@ -24,12 +24,15 @@
       .card-title {
         text-align: center;
       }
-      button {
-        align-content: center;
+
+      body {
+        background-color: aliceblue;
+      }
+      .card {
+        margin: 1rem;
       }
     </style>
   </head>
-
   <body>
     <div class="container">
       <nav class="navbar navbar-light bg-light">
@@ -57,7 +60,7 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="addCageModalLabel">
-                    Add New Cage
+                    Add Cage
                   </h5>
                   <button
                     type="button"
@@ -89,11 +92,7 @@
                     </div>
                     <div class="mb-3">
                       <label for="inputImage1" class="form-label">Image</label>
-                      <input
-                        type="file"
-                        class="form-control"
-                        id="inputImage1"
-                      />
+                      <input type="url" class="form-control" id="inputImage1" />
                     </div>
                   </form>
                 </div>
@@ -115,388 +114,6 @@
       <div class="row">
         <div class="col-md-3">
           <div class="card">
-            <img src="https://www.placecage.com/c/150/110" />
-            <div>
-              <h3 class="card-title">Nicolas Cage</h3>
-              <p>
-                Nicolas Cage was born Nicolas Kim Coppola in Long Beach,
-                California, the son of comparative literature professor August
-                Coppola. Cage changed his name early in his career to make his
-                own reputation, succeeding brilliantly with a host of classic,
-                quirky roles by the late 1980s.
-              </p>
-              <!-- Button trigger modal -->
-              <button type="button" class="btn btn-danger">Delete</button>
-              <button
-                type="button"
-                class="btn btn-dark"
-                data-bs-toggle="modal"
-                data-bs-target="#addCageModal"
-              >
-                Update
-              </button>
-
-              <!-- Modal -->
-              <div
-                class="modal fade"
-                id="updateCageModal"
-                tabindex="-1"
-                aria-labelledby="updateCageModal"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="updateCageModalLabel">
-                        Update Cage
-                      </h5>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div class="modal-body">
-                      <form>
-                        <div class="mb-3">
-                          <label for="inputTitle1" class="form-label"
-                            >Title</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputTitle1"
-                            aria-describedby="titleHelp"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputDescription1" class="form-label"
-                            >Description</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputDescription1"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputImage1" class="form-label"
-                            >Image</label
-                          >
-                          <input
-                            type="file"
-                            class="form-control"
-                            id="inputImage1"
-                          />
-                        </div>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal"
-                      >
-                        Close
-                      </button>
-                      <button type="submit" class="btn btn-primary">Add</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card">
-            <img src="https://www.placecage.com/c/150/111" />
-            <div>
-              <h3 class="card-title">Nicolas Cage</h3>
-              <p>
-                Nicolas Cage was born Nicolas Kim Coppola in Long Beach,
-                California, the son of comparative literature professor August
-                Coppola. Cage changed his name early in his career to make his
-                own reputation, succeeding brilliantly with a host of classic,
-                quirky roles by the late 1980s.
-              </p>
-              <!-- Button trigger modal -->
-              <button type="button" class="btn btn-danger">Delete</button>
-              <button
-                type="button"
-                class="btn btn-dark"
-                data-bs-toggle="modal"
-                data-bs-target="#addCageModal"
-              >
-                Update
-              </button>
-
-              <!-- Modal -->
-              <div
-                class="modal fade"
-                id="updateCageModal"
-                tabindex="-1"
-                aria-labelledby="updateCageModal"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="updateCageModalLabel">
-                        Update Cage
-                      </h5>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div class="modal-body">
-                      <form>
-                        <div class="mb-3">
-                          <label for="inputTitle1" class="form-label"
-                            >Title</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputTitle1"
-                            aria-describedby="titleHelp"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputDescription1" class="form-label"
-                            >Description</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputDescription1"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputImage1" class="form-label"
-                            >Image</label
-                          >
-                          <input
-                            type="file"
-                            class="form-control"
-                            id="inputImage1"
-                          />
-                        </div>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal"
-                      >
-                        Close
-                      </button>
-                      <button type="submit" class="btn btn-primary">Add</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card">
-            <img src="https://www.placecage.com/c/150/112" />
-            <div>
-              <h3 class="card-title">Nicolas Cage</h3>
-              <p>
-                Nicolas Cage was born Nicolas Kim Coppola in Long Beach,
-                California, the son of comparative literature professor August
-                Coppola. Cage changed his name early in his career to make his
-                own reputation, succeeding brilliantly with a host of classic,
-                quirky roles by the late 1980s.
-              </p>
-              <!-- Button trigger modal -->
-              <button type="button" class="btn btn-danger">Delete</button>
-              <button
-                type="button"
-                class="btn btn-dark"
-                data-bs-toggle="modal"
-                data-bs-target="#addCageModal"
-              >
-                Update
-              </button>
-
-              <!-- Modal -->
-              <div
-                class="modal fade"
-                id="updateCageModal"
-                tabindex="-1"
-                aria-labelledby="updateCageModal"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="updateCageModalLabel">
-                        Update Cage
-                      </h5>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div class="modal-body">
-                      <form>
-                        <div class="mb-3">
-                          <label for="inputTitle1" class="form-label"
-                            >Title</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputTitle1"
-                            aria-describedby="titleHelp"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputDescription1" class="form-label"
-                            >Description</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputDescription1"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputImage1" class="form-label"
-                            >Image</label
-                          >
-                          <input
-                            type="file"
-                            class="form-control"
-                            id="inputImage1"
-                          />
-                        </div>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal"
-                      >
-                        Close
-                      </button>
-                      <button type="submit" class="btn btn-primary">Add</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card">
-            <img src="https://www.placecage.com/c/150/113" />
-            <div>
-              <h3 class="card-title">Nicolas Cage</h3>
-              <p>
-                Nicolas Cage was born Nicolas Kim Coppola in Long Beach,
-                California, the son of comparative literature professor August
-                Coppola. Cage changed his name early in his career to make his
-                own reputation, succeeding brilliantly with a host of classic,
-                quirky roles by the late 1980s.
-              </p>
-              <!-- Button trigger modal -->
-              <button type="button" class="btn btn-danger">Delete</button>
-              <button
-                type="button"
-                class="btn btn-dark"
-                data-bs-toggle="modal"
-                data-bs-target="#addCageModal"
-              >
-                Update
-              </button>
-
-              <!-- Modal -->
-              <div
-                class="modal fade"
-                id="updateCageModal"
-                tabindex="-1"
-                aria-labelledby="updateCageModal"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="updateCageModalLabel">
-                        Update Cage
-                      </h5>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div class="modal-body">
-                      <form>
-                        <div class="mb-3">
-                          <label for="inputTitle1" class="form-label"
-                            >Title</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputTitle1"
-                            aria-describedby="titleHelp"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputDescription1" class="form-label"
-                            >Description</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputDescription1"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputImage1" class="form-label"
-                            >Image</label
-                          >
-                          <input
-                            type="file"
-                            class="form-control"
-                            id="inputImage1"
-                          />
-                        </div>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal"
-                      >
-                        Close
-                      </button>
-                      <button type="submit" class="btn btn-primary">Add</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-3">
-          <div class="card">
             <img src="https://www.placecage.com/c/150/114" />
             <div>
               <h3 class="card-title">Nicolas Cage</h3>
@@ -507,180 +124,25 @@
                 own reputation, succeeding brilliantly with a host of classic,
                 quirky roles by the late 1980s.
               </p>
-              <!-- Button trigger modal -->
-              <button type="button" class="btn btn-danger">Delete</button>
-              <button
-                type="button"
-                class="btn btn-dark"
-                data-bs-toggle="modal"
-                data-bs-target="#addCageModal"
-              >
-                Update
-              </button>
+              <div class="text-center">
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  data-bs-toggle="modal"
+                  data-bs-target="#deleteModal"
+                >
+                  Delete
+                </button>
 
-              <!-- Modal -->
-              <div
-                class="modal fade"
-                id="updateCageModal"
-                tabindex="-1"
-                aria-labelledby="updateCageModal"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="updateCageModalLabel">
-                        Update Cage
-                      </h5>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div class="modal-body">
-                      <form>
-                        <div class="mb-3">
-                          <label for="inputTitle1" class="form-label"
-                            >Title</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputTitle1"
-                            aria-describedby="titleHelp"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputDescription1" class="form-label"
-                            >Description</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputDescription1"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputImage1" class="form-label"
-                            >Image</label
-                          >
-                          <input
-                            type="file"
-                            class="form-control"
-                            id="inputImage1"
-                          />
-                        </div>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal"
-                      >
-                        Close
-                      </button>
-                      <button type="submit" class="btn btn-primary">Add</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card">
-            <img src="https://www.placecage.com/c/150/115" />
-            <div>
-              <h3 class="card-title">Nicolas Cage</h3>
-              <p>
-                Nicolas Cage was born Nicolas Kim Coppola in Long Beach,
-                California, the son of comparative literature professor August
-                Coppola. Cage changed his name early in his career to make his
-                own reputation, succeeding brilliantly with a host of classic,
-                quirky roles by the late 1980s.
-              </p>
-              <!-- Button trigger modal -->
-              <button type="button" class="btn btn-danger">Delete</button>
-              <button
-                type="button"
-                class="btn btn-dark"
-                data-bs-toggle="modal"
-                data-bs-target="#addCageModal"
-              >
-                Update
-              </button>
-
-              <!-- Modal -->
-              <div
-                class="modal fade"
-                id="updateCageModal"
-                tabindex="-1"
-                aria-labelledby="updateCageModal"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="updateCageModalLabel">
-                        Update Cage
-                      </h5>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div class="modal-body">
-                      <form>
-                        <div class="mb-3">
-                          <label for="inputTitle1" class="form-label"
-                            >Title</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputTitle1"
-                            aria-describedby="titleHelp"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputDescription1" class="form-label"
-                            >Description</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputDescription1"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputImage1" class="form-label"
-                            >Image</label
-                          >
-                          <input
-                            type="file"
-                            class="form-control"
-                            id="inputImage1"
-                          />
-                        </div>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal"
-                      >
-                        Close
-                      </button>
-                      <button type="submit" class="btn btn-primary">Add</button>
-                    </div>
-                  </div>
-                </div>
+                <!-- Button trigger modal -->
+                <button
+                  type="button"
+                  class="btn btn-dark"
+                  data-bs-toggle="modal"
+                  data-bs-target="#updateCageModal"
+                >
+                  Update
+                </button>
               </div>
             </div>
           </div>
@@ -697,950 +159,203 @@
                 own reputation, succeeding brilliantly with a host of classic,
                 quirky roles by the late 1980s.
               </p>
+              <div class="text-center">
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  data-bs-toggle="modal"
+                  data-bs-target="#deleteModal"
+                >
+                  Delete
+                </button>
               <!-- Button trigger modal -->
-              <button type="button" class="btn btn-danger">Delete</button>
               <button
                 type="button"
                 class="btn btn-dark"
                 data-bs-toggle="modal"
-                data-bs-target="#addCageModal"
+                data-bs-target="#updateCageModal"
               >
                 Update
               </button>
-
-              <!-- Modal -->
-              <div
-                class="modal fade"
-                id="updateCageModal"
-                tabindex="-1"
-                aria-labelledby="updateCageModal"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="updateCageModalLabel">
-                        Update Cage
-                      </h5>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div class="modal-body">
-                      <form>
-                        <div class="mb-3">
-                          <label for="inputTitle1" class="form-label"
-                            >Title</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputTitle1"
-                            aria-describedby="titleHelp"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputDescription1" class="form-label"
-                            >Description</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputDescription1"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputImage1" class="form-label"
-                            >Image</label
-                          >
-                          <input
-                            type="file"
-                            class="form-control"
-                            id="inputImage1"
-                          />
-                        </div>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal"
-                      >
-                        Close
-                      </button>
-                      <button type="submit" class="btn btn-primary">Add</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card">
-            <img src="https://www.placecage.com/c/150/117" />
-            <div>
-              <h3 class="card-title">Nicolas Cage</h3>
-              <p>
-                Nicolas Cage was born Nicolas Kim Coppola in Long Beach,
-                California, the son of comparative literature professor August
-                Coppola. Cage changed his name early in his career to make his
-                own reputation, succeeding brilliantly with a host of classic,
-                quirky roles by the late 1980s.
-              </p>
-              <!-- Button trigger modal -->
-              <button type="button" class="btn btn-danger">Delete</button>
-              <button
-                type="button"
-                class="btn btn-dark"
-                data-bs-toggle="modal"
-                data-bs-target="#addCageModal"
-              >
-                Update
-              </button>
-
-              <!-- Modal -->
-              <div
-                class="modal fade"
-                id="updateCageModal"
-                tabindex="-1"
-                aria-labelledby="updateCageModal"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="updateCageModalLabel">
-                        Update Cage
-                      </h5>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div class="modal-body">
-                      <form>
-                        <div class="mb-3">
-                          <label for="inputTitle1" class="form-label"
-                            >Title</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputTitle1"
-                            aria-describedby="titleHelp"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputDescription1" class="form-label"
-                            >Description</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputDescription1"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputImage1" class="form-label"
-                            >Image</label
-                          >
-                          <input
-                            type="file"
-                            class="form-control"
-                            id="inputImage1"
-                          />
-                        </div>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal"
-                      >
-                        Close
-                      </button>
-                      <button type="submit" class="btn btn-primary">Add</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-3">
-          <div class="card">
-            <img src="https://www.placecage.com/c/150/118" />
-            <div>
-              <h3 class="card-title">Nicolas Cage</h3>
-              <p>
-                Nicolas Cage was born Nicolas Kim Coppola in Long Beach,
-                California, the son of comparative literature professor August
-                Coppola. Cage changed his name early in his career to make his
-                own reputation, succeeding brilliantly with a host of classic,
-                quirky roles by the late 1980s.
-              </p>
+      <div class="col-md-3">
+        <div class="card">
+          <img src="https://www.placecage.com/c/150/117" />
+          <div>
+            <h3 class="card-title">Nicolas Cage</h3>
+            <p>
+              Nicolas Cage was born Nicolas Kim Coppola in Long Beach,
+              California, the son of comparative literature professor August
+              Coppola. Cage changed his name early in his career to make his own
+              reputation, succeeding brilliantly with a host of classic, quirky
+              roles by the late 1980s.
+            </p>
+            <div class="text-center">
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteModal"
+              >
+                Delete
+              </button>
               <!-- Button trigger modal -->
-              <button type="button" class="btn btn-danger">Delete</button>
               <button
                 type="button"
                 class="btn btn-dark"
                 data-bs-toggle="modal"
-                data-bs-target="#addCageModal"
+                data-bs-target="#updateCageModal"
               >
                 Update
               </button>
-
-              <!-- Modal -->
-              <div
-                class="modal fade"
-                id="updateCageModal"
-                tabindex="-1"
-                aria-labelledby="updateCageModal"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="updateCageModalLabel">
-                        Update Cage
-                      </h5>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div class="modal-body">
-                      <form>
-                        <div class="mb-3">
-                          <label for="inputTitle1" class="form-label"
-                            >Title</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputTitle1"
-                            aria-describedby="titleHelp"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputDescription1" class="form-label"
-                            >Description</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputDescription1"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputImage1" class="form-label"
-                            >Image</label
-                          >
-                          <input
-                            type="file"
-                            class="form-control"
-                            id="inputImage1"
-                          />
-                        </div>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal"
-                      >
-                        Close
-                      </button>
-                      <button type="submit" class="btn btn-primary">Add</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card">
-            <img src="https://www.placecage.com/c/150/119" />
-            <div>
-              <h3 class="card-title">Nicolas Cage</h3>
-              <p>
-                Nicolas Cage was born Nicolas Kim Coppola in Long Beach,
-                California, the son of comparative literature professor August
-                Coppola. Cage changed his name early in his career to make his
-                own reputation, succeeding brilliantly with a host of classic,
-                quirky roles by the late 1980s.
-              </p>
-              <!-- Button trigger modal -->
-              <button type="button" class="btn btn-danger">Delete</button>
-              <button
-                type="button"
-                class="btn btn-dark"
-                data-bs-toggle="modal"
-                data-bs-target="#addCageModal"
-              >
-                Update
-              </button>
-
-              <!-- Modal -->
-              <div
-                class="modal fade"
-                id="updateCageModal"
-                tabindex="-1"
-                aria-labelledby="updateCageModal"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="updateCageModalLabel">
-                        Update Cage
-                      </h5>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div class="modal-body">
-                      <form>
-                        <div class="mb-3">
-                          <label for="inputTitle1" class="form-label"
-                            >Title</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputTitle1"
-                            aria-describedby="titleHelp"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputDescription1" class="form-label"
-                            >Description</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputDescription1"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputImage1" class="form-label"
-                            >Image</label
-                          >
-                          <input
-                            type="file"
-                            class="form-control"
-                            id="inputImage1"
-                          />
-                        </div>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal"
-                      >
-                        Close
-                      </button>
-                      <button type="submit" class="btn btn-primary">Add</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card">
-            <img src="https://www.placecage.com/c/150/120" />
-            <div>
-              <h3 class="card-title">Nicolas Cage</h3>
-              <p>
-                Nicolas Cage was born Nicolas Kim Coppola in Long Beach,
-                California, the son of comparative literature professor August
-                Coppola. Cage changed his name early in his career to make his
-                own reputation, succeeding brilliantly with a host of classic,
-                quirky roles by the late 1980s.
-              </p>
-              <!-- Button trigger modal -->
-              <button type="button" class="btn btn-danger">Delete</button>
-              <button
-                type="button"
-                class="btn btn-dark"
-                data-bs-toggle="modal"
-                data-bs-target="#addCageModal"
-              >
-                Update
-              </button>
-
-              <!-- Modal -->
-              <div
-                class="modal fade"
-                id="updateCageModal"
-                tabindex="-1"
-                aria-labelledby="updateCageModal"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="updateCageModalLabel">
-                        Update Cage
-                      </h5>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div class="modal-body">
-                      <form>
-                        <div class="mb-3">
-                          <label for="inputTitle1" class="form-label"
-                            >Title</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputTitle1"
-                            aria-describedby="titleHelp"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputDescription1" class="form-label"
-                            >Description</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputDescription1"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputImage1" class="form-label"
-                            >Image</label
-                          >
-                          <input
-                            type="file"
-                            class="form-control"
-                            id="inputImage1"
-                          />
-                        </div>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal"
-                      >
-                        Close
-                      </button>
-                      <button type="submit" class="btn btn-primary">Add</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card">
-            <img src="https://www.placecage.com/c/150/121" />
-            <div>
-              <h3 class="card-title">Nicolas Cage</h3>
-              <p>
-                Nicolas Cage was born Nicolas Kim Coppola in Long Beach,
-                California, the son of comparative literature professor August
-                Coppola. Cage changed his name early in his career to make his
-                own reputation, succeeding brilliantly with a host of classic,
-                quirky roles by the late 1980s.
-              </p>
-              <!-- Button trigger modal -->
-              <button type="button" class="btn btn-danger">Delete</button>
-              <button
-                type="button"
-                class="btn btn-dark"
-                data-bs-toggle="modal"
-                data-bs-target="#addCageModal"
-              >
-                Update
-              </button>
-
-              <!-- Modal -->
-              <div
-                class="modal fade"
-                id="updateCageModal"
-                tabindex="-1"
-                aria-labelledby="updateCageModal"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="updateCageModalLabel">
-                        Update Cage
-                      </h5>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div class="modal-body">
-                      <form>
-                        <div class="mb-3">
-                          <label for="inputTitle1" class="form-label"
-                            >Title</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputTitle1"
-                            aria-describedby="titleHelp"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputDescription1" class="form-label"
-                            >Description</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputDescription1"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputImage1" class="form-label"
-                            >Image</label
-                          >
-                          <input
-                            type="file"
-                            class="form-control"
-                            id="inputImage1"
-                          />
-                        </div>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal"
-                      >
-                        Close
-                      </button>
-                      <button type="submit" class="btn btn-primary">Add</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+             
             </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-3">
-          <div class="card">
-            <img src="https://www.placecage.com/c/150/122" />
-            <div>
-              <h3 class="card-title">Nicolas Cage</h3>
-              <p>
-                Nicolas Cage was born Nicolas Kim Coppola in Long Beach,
-                California, the son of comparative literature professor August
-                Coppola. Cage changed his name early in his career to make his
-                own reputation, succeeding brilliantly with a host of classic,
-                quirky roles by the late 1980s.
-              </p>
+      <div class="col-md-3">
+        <div class="card">
+          <img src="https://www.placecage.com/c/150/119" />
+          <div>
+            <h3 class="card-title">Nicolas Cage</h3>
+            <p>
+              Nicolas Cage was born Nicolas Kim Coppola in Long Beach,
+              California, the son of comparative literature professor August
+              Coppola. Cage changed his name early in his career to make his own
+              reputation, succeeding brilliantly with a host of classic, quirky
+              roles by the late 1980s.
+            </p>
+            <div class="text-center">
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteModal"
+              >
+                Delete
+              </button>
               <!-- Button trigger modal -->
-              <button type="button" class="btn btn-danger">Delete</button>
               <button
                 type="button"
                 class="btn btn-dark"
                 data-bs-toggle="modal"
-                data-bs-target="#addCageModal"
+                data-bs-target="#updateCageModal"
               >
                 Update
               </button>
-
-              <!-- Modal -->
-              <div
-                class="modal fade"
-                id="updateCageModal"
-                tabindex="-1"
-                aria-labelledby="updateCageModal"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="updateCageModalLabel">
-                        Update Cage
-                      </h5>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div class="modal-body">
-                      <form>
-                        <div class="mb-3">
-                          <label for="inputTitle1" class="form-label"
-                            >Title</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputTitle1"
-                            aria-describedby="titleHelp"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputDescription1" class="form-label"
-                            >Description</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputDescription1"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputImage1" class="form-label"
-                            >Image</label
-                          >
-                          <input
-                            type="file"
-                            class="form-control"
-                            id="inputImage1"
-                          />
-                        </div>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal"
-                      >
-                        Close
-                      </button>
-                      <button type="submit" class="btn btn-primary">Add</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card">
-            <img src="https://www.placecage.com/c/150/123" />
-            <div>
-              <h3 class="card-title">Nicolas Cage</h3>
-              <p>
-                Nicolas Cage was born Nicolas Kim Coppola in Long Beach,
-                California, the son of comparative literature professor August
-                Coppola. Cage changed his name early in his career to make his
-                own reputation, succeeding brilliantly with a host of classic,
-                quirky roles by the late 1980s.
-              </p>
-              <!-- Button trigger modal -->
-              <button type="button" class="btn btn-danger">Delete</button>
-              <button
-                type="button"
-                class="btn btn-dark"
-                data-bs-toggle="modal"
-                data-bs-target="#addCageModal"
-              >
-                Update
-              </button>
-
-              <!-- Modal -->
-              <div
-                class="modal fade"
-                id="updateCageModal"
-                tabindex="-1"
-                aria-labelledby="updateCageModal"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="updateCageModalLabel">
-                        Update Cage
-                      </h5>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div class="modal-body">
-                      <form>
-                        <div class="mb-3">
-                          <label for="inputTitle1" class="form-label"
-                            >Title</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputTitle1"
-                            aria-describedby="titleHelp"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputDescription1" class="form-label"
-                            >Description</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputDescription1"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputImage1" class="form-label"
-                            >Image</label
-                          >
-                          <input
-                            type="file"
-                            class="form-control"
-                            id="inputImage1"
-                          />
-                        </div>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal"
-                      >
-                        Close
-                      </button>
-                      <button type="submit" class="btn btn-primary">Add</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card">
-            <img src="https://www.placecage.com/c/150/124" />
-            <div>
-              <h3 class="card-title">Nicolas Cage</h3>
-              <p>
-                Nicolas Cage was born Nicolas Kim Coppola in Long Beach,
-                California, the son of comparative literature professor August
-                Coppola. Cage changed his name early in his career to make his
-                own reputation, succeeding brilliantly with a host of classic,
-                quirky roles by the late 1980s.
-              </p>
-              <!-- Button trigger modal -->
-              <button type="button" class="btn btn-danger">Delete</button>
-              <button
-                type="button"
-                class="btn btn-dark"
-                data-bs-toggle="modal"
-                data-bs-target="#addCageModal"
-              >
-                Update
-              </button>
-
-              <!-- Modal -->
-              <div
-                class="modal fade"
-                id="updateCageModal"
-                tabindex="-1"
-                aria-labelledby="updateCageModal"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="updateCageModalLabel">
-                        Update Cage
-                      </h5>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div class="modal-body">
-                      <form>
-                        <div class="mb-3">
-                          <label for="inputTitle1" class="form-label"
-                            >Title</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputTitle1"
-                            aria-describedby="titleHelp"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputDescription1" class="form-label"
-                            >Description</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputDescription1"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputImage1" class="form-label"
-                            >Image</label
-                          >
-                          <input
-                            type="file"
-                            class="form-control"
-                            id="inputImage1"
-                          />
-                        </div>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal"
-                      >
-                        Close
-                      </button>
-                      <button type="submit" class="btn btn-primary">Add</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card">
-            <img src="https://www.placecage.com/c/150/125" />
-            <div>
-              <h3 class="card-title">Nicolas Cage</h3>
-              <p>
-                Nicolas Cage was born Nicolas Kim Coppola in Long Beach,
-                California, the son of comparative literature professor August
-                Coppola. Cage changed his name early in his career to make his
-                own reputation, succeeding brilliantly with a host of classic,
-                quirky roles by the late 1980s.
-              </p>
-              <!-- Button trigger modal -->
-              <button type="button" class="btn btn-danger">Delete</button>
-              <button
-                type="button"
-                class="btn btn-dark"
-                data-bs-toggle="modal"
-                data-bs-target="#addCageModal"
-              >
-                Update
-              </button>
-
-              <!-- Modal -->
-              <div
-                class="modal fade"
-                id="updateCageModal"
-                tabindex="-1"
-                aria-labelledby="updateCageModal"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="updateCageModalLabel">
-                        Update Cage
-                      </h5>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div class="modal-body">
-                      <form>
-                        <div class="mb-3">
-                          <label for="inputTitle1" class="form-label"
-                            >Title</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputTitle1"
-                            aria-describedby="titleHelp"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputDescription1" class="form-label"
-                            >Description</label
-                          >
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputDescription1"
-                          />
-                        </div>
-                        <div class="mb-3">
-                          <label for="inputImage1" class="form-label"
-                            >Image</label
-                          >
-                          <input
-                            type="file"
-                            class="form-control"
-                            id="inputImage1"
-                          />
-                        </div>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal"
-                      >
-                        Close
-                      </button>
-                      <button type="submit" class="btn btn-primary">Add</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- Delete Modal Area -->
+    <div
+      class="modal fade"
+      id="deleteModal"
+      tabindex="-1"
+      aria-labelledby="deleteModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteModalLabel">Delete Cage</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">Are you sure you want to delete forever?</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-danger">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <!-- Update Modal -->
+        <div
+        class="modal fade"
+        id="updateCageModal"
+        tabindex="-1"
+        aria-labelledby="updateCageModal"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="updateCageModalLabel">
+                Update Cage
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="inputTitle1" class="form-label"
+                    >Title</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputTitle1"
+                    aria-describedby="titleHelp"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="inputDescription1" class="form-label"
+                    >Description</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputDescription1"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="inputImage1" class="form-label"
+                    >Image</label
+                  >
+                  <input
+                    type="url"
+                    class="form-control"
+                    id="inputImage1"
+                  />
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="submit" class="btn btn-primary">
+                Update
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     <!-- Bootstrap JavaScript Libraries -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
