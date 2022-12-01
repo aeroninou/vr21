@@ -1,0 +1,21 @@
+.container {
+    margin: 2rem;
+}
+
+.calculator-container {
+    background-color: grey;
+    height: 600px;
+    width: 475px;
+    border-radius: 10px;
+    padding-top: 37.5px;
+}
+
+.calculator-display {
+    border-radius: 10px;
+    height: 80px;
+    width: 400px;
+    background-color: lightgreen;
+    margin: 0 auto;
+    text-align: right;
+    font-size: 4em;
+}
