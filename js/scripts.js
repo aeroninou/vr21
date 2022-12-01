@@ -180,5 +180,31 @@ const people = ["Greg", "Mary", "Devon", "James"];
 //console.log(people.indexOf("Mary"));
 //console.log(people.indexOf("Foo"));
 //people.splice(2, 1, "Elizabeth", "Artie");
-//withBob = people.concat("Bob");
+withBob = people.concat("Bob");
 console.log(withBob);
+
+const myObj = {
+    favColor: "Black",
+    favFood: "Sushi",
+    favNum: 3
+};
+
+//using . notation
+console.log(myObj.favColor);
+
+//using bracket notation
+console.log(myObj["favFood"]);
+
+let programming = {
+    languages: ["JavaScript", "Python", "Ruby"],
+    isChallenging: true,
+    isRewarding: true,
+    difficulty: 8,
+    jokes: "https://bit.ly/2ysFran"
+  };
+
+programming.languages.push("Go");
+programming.difficulty = 7;
+delete programming.jokes;
+programming.isFun = true;
+console.log(programming);
