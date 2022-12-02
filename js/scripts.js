@@ -169,7 +169,7 @@ const arrayManipulation = (array, command, location, value) => {
 }
 console.log(arrayManipulation([1,2,3,4], "add", "beginning", 20));
 
-
+//Arrays Exercise..
 const people = ["Greg", "Mary", "Devon", "James"];
 //people.shift();
 //people.pop();
@@ -195,6 +195,7 @@ console.log(myObj.favColor);
 //using bracket notation
 console.log(myObj["favFood"]);
 
+//Objects exercise..
 let programming = {
     languages: ["JavaScript", "Python", "Ruby"],
     isChallenging: true,
@@ -208,3 +209,17 @@ programming.difficulty = 7;
 delete programming.jokes;
 programming.isFun = true;
 console.log(programming);
+
+//For loops practice..
+const nums = [1,2,3,4,5,6,7];
+for (num in nums){
+    console.log(num);
+}
+
+const twoDArray = [[1,2,3], [4,5,6], [7,8,9]];
+console.log("this is flat function", twoDArray.flat());
+
+flatArray = twoDArray.flat();
+for(arr of flatArray){
+    console.log(arr);
+}
