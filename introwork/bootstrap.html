@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>Cage, Nick</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -26,33 +26,44 @@
       }
 
       body {
-        background-color:antiquewhite;
+        background-color:black;
       }
       .card {
         margin: 1rem;
+        background-color: antiquewhite;
       }
 
       .btn-danger, .btn-dark {
-        margin-bottom: 10px;
+        margin-bottom: 4px;
       }
       .navbar {
-        margin-top: 20px;
+        margin-top: 20px; 
+        background-color: antiquewhite;
+        font-style: italic;
+      }
+      img {
+        border-radius: 5px;
+      }
+      .navbar-brand {
+        color: black;
+        font-weight: bold;
       }
 
     </style>
   </head>
   <body>
     <div class="container">
-      <nav class="navbar navbar-dark rounded-pill bg-dark rounded-pill">
+      <nav class="navbar navbar-dark rounded-pill rounded-pill">
         <div class="container-fluid">
-          <a class="navbar-brand">Nicolas Cage</a>
+          <a class="navbar-brand">Welcome to the Cage</a>
           <link rel="icon" type="image/x-icon" href="../images/crazy.jpg">
           <!-- Button trigger modal -->
           <button
             type="button"
-            class="btn btn-primary rounded-pill"
+            class="btn btn-dark rounded-pill"
             data-bs-toggle="modal"
             data-bs-target="#addCageModal"
+            id="add-button"
           >
             Add
           </button>
