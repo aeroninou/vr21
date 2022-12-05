@@ -1,0 +1,39 @@
+
+.navbar, footer {
+    background-color: beige;
+    color: black;
+    align-items: flex-end;
+}
+
+.carousel-caption {
+    background-color: beige;
+    color: black;
+}
+
+#site-logo {
+    border-radius: 50%;
+}
+
+i {
+    color: black;
+}
+
+.row {
+    margin: auto;
+}
+
+.card {
+    padding: auto;
+    background-color: white;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+#aboutme-card {
+    margin-top: 50%;
+}
+
+body {
+    background-color: beige;
+}
+
