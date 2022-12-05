@@ -223,3 +223,9 @@ flatArray = twoDArray.flat();
 for(arr of flatArray){
     console.log(arr);
 }
+
+let mapArray = [1,2,3,4,5].map(num => num *2);
+console.log(mapArray)
+
+let filterArray = [1,2,3,4,5].filter(num => num % 2 === 0);
+console.log(filterArray)
