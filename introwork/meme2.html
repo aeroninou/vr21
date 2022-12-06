@@ -16,6 +16,12 @@
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
+    <style>
+      .card {
+        width: 18rem;
+        margin: 1rem;
+      }
+    </style>
   </head>
 
   <body>
@@ -108,9 +114,7 @@
     </header>
     <main>
       <div class="container">
-        <div id="cardContainer" class="row">
-          <div class="col"></div>
-        </div>
+        <div id="cardContainer" class="row"></div>
       </div>
     </main>
     <footer>
@@ -129,8 +133,11 @@
       crossorigin="anonymous"
     ></script>
     <script>
+      const CARD_DATA_KEY = "key";
+      const CARD_TITLE_ATT = "data-meme-title";
       const addForm = document.querySelector("#addMemeModal form");
       addForm.addEventListener("submit", handelAddSubmit);
+      window.addEventListener("load", addAllCards);
 
       function handelAddSubmit(event) {
         event.preventDefault();
@@ -143,15 +150,16 @@
 
         const cardData = { imageUrl, topText, bottomText };
         addCardUI(cardData);
+        addCardtoDataBase(cardData);
 
         const closeBtn = document.querySelector('[data-bs-dismiss="modal"]');
 
         closeBtn.click();
-
-        function addCardUI(cardData) {
-          const cardCol = document.createElement("div");
-          cardCol.classList.add("col");
-          cardCol.innerHTML = `<div class="card" style="width: 18rem">
+      }
+      function addCardUI(cardData) {
+        const cardCol = document.createElement("div");
+        cardCol.classList.add("card");
+        cardCol.innerHTML = `
               <img class="card-img-top" />
               <div class="card-body">
                 <h5 class="card-title"></h5>
@@ -159,18 +167,55 @@
                 <a class="btn btn-danger">Delete</a>
               </div>
             </div>`;
-          cardCol
-            .querySelector(".card-img-top")
-            .setAttribute("src", cardData.imageUrl);
-          cardCol
-            .querySelector(".card-img-top")
-            .setAttribute("alt", cardData.topText);
-          cardCol.querySelector(".card-title").textContent = cardData.topText;
-          cardCol.querySelector(".card-text").textContent = cardData.bottomText;
+        cardCol
+          .querySelector(".card-img-top")
+          .setAttribute("src", cardData.imageUrl);
+        cardCol
+          .querySelector(".card-img-top")
+          .setAttribute("alt", cardData.topText);
+        cardCol.querySelector(".card-title").textContent = cardData.topText;
+        cardCol.querySelector(".card-text").textContent = cardData.bottomText;
 
-          const cardContainer = document.getElementById("cardContainer");
-          cardContainer.append(cardCol);
+        const deleteBtn = cardCol.querySelector(".btn-danger");
+        deleteBtn.addEventListener("click", deleteCard);
+        cardCol.setAttribute(CARD_TITLE_ATT, cardData.topText);
+
+        const cardContainer = document.getElementById("cardContainer");
+        cardContainer.append(cardCol);
+      }
+
+      function addCardtoDataBase(cardData) {
+        let data = loadDataFromDB();
+        data.push(cardData);
+
+        //save to database
+        saveData(data);
+      }
+
+      function addAllCards(e) {
+        let data = loadDataFromDB();
+        data.forEach((cardData) => addCardUI(cardData));
+      }
+
+      function loadDataFromDB() {
+        let data = JSON.parse(localStorage.getItem(CARD_DATA_KEY));
+        if (!data) {
+          data = [];
         }
+        return data;
+      }
+      function deleteCard(e) {
+        const deleteBtn = e.target;
+        const cardCol = deleteBtn.closest(".col");
+        const topTexttoDelete = cardCol.getAttribute(CARD_TITLE_ATT);
+        let data = loadDataFromDB();
+        data = data.filter((cardData) => cardData.topText !== topTexttoDelete);
+        saveData(data);
+        cardCol.remove();
+      }
+
+      function saveData(data) {
+        localStorage.setItem(CARD_DATA_KEY, JSON.stringify(data));
       }
     </script>
   </body>

@@ -37,14 +37,20 @@
       .card {
         margin: 1rem;
       }
+      .memes-title {
+        text-align: center;
+        background-color: grey;
+      }
     </style>
   </head>
 
   <body>
     <header>
-      <form>
+      <div class="memes-title">
         <h1>I CAN HAZ MEMEZ?</h1>
         <h4>Fill out the form to start creating material</h4>
+      </div>
+      <form id="addMeme">
         <div class="mb-3">
           <label for="imageUrl" class="form-label">Image URL</label>
           <input
@@ -52,20 +58,33 @@
             class="form-control"
             id="imageUrl"
             aria-describedby="imageUrl"
+            name="imageUrl"
           />
         </div>
         <div class="mb-3">
           <label for="textOnTop" class="form-label">Text on Top</label>
-          <input type="text" class="form-control" id="textOnTop" />
+          <input
+            type="text"
+            name="textOnTop"
+            class="form-control"
+            id="textOnTop"
+          />
         </div>
         <div class="mb-3">
           <label for="textOnBottom" class="form-label">Text on Bottom</label>
-          <input type="text" class="form-control" id="textOnBottom" />
+          <input
+            type="text"
+            name="textOnBottom"
+            class="form-control"
+            id="textOnBottom"
+          />
         </div>
 
-        <button type="submit" id="submitMeme" class="btn btn-primary">
-          Add Meme
-        </button>
+        <div class="text-center">
+          <button type="submit" id="submitMeme" class="btn btn-primary">
+            Add Meme
+          </button>
+        </div>
       </form>
     </header>
     <main>
@@ -87,20 +106,33 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      document.querySelector("#submitMeme").addEventListener("click", (e) => {
-        const card = `<div class="col-md-3">
+      const addForm = document.querySelector("#addMeme div");
+      addForm.addEventListener("submit", handelAddSubmit);
+
+      function handelAddSubmit(e) {
+        e.preventDefault();
+        const imageUrl = addForm.elements.imageUrl.value;
+        const topText = addForm.elements.textOnTop.value;
+        const bottomText = addForm.elements.textOnBottom.value;
+        addForm.reset();
+
+        const cardData = { imageUrl, topText, bottomText };
+        const contentCard = `<div class="col-md-3 col-lg-4">
           <div class="card">
             <div id="makeTitleOnImage">
-              <h1 class="top-ofImage">Title</h1>
+              <h1 class="top-ofImage">${cardData.topText}</h1>
               <img
-                src="https://i.pinimg.com/originals/ba/92/7f/ba927ff34cd961ce2c184d47e8ead9f6.jpg"
-              />
-              <h1 class="bottom-ofImage">Bottom</h1>
+                src="${cardData.imageUrl}"
+              width=100%/>
+              <h1 class="bottom-ofImage">${cardData.bottomText}</h1>
             </div>
           </div>
         </div>`;
-        document.querySelector(".row").insertAdjacentHTML("beforeend", card);
-      });
+        document
+          .querySelector(".row")
+          .insertAdjacentHTML("beforeend", contentCard);
+        debugger;
+      }
     </script>
   </body>
 </html>
