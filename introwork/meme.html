@@ -116,7 +116,7 @@
         addForm.reset();
         const cardData = { imageUrl, topText, bottomText };
 
-        const contentCard = `<div class="col-md-3 col-lg-4">
+        const contentCard = `<div class="col-md-3">
           <div class="card">
             <div id="makeTitleOnImage">
               <h1 class="top-ofImage">${topText}</h1>
@@ -125,12 +125,22 @@
               width=100%/>
               <h1 class="bottom-ofImage">${bottomText}</h1>
             </div>
+            <a class="btn btn-danger">Delete</a>
           </div>
         </div>`;
         document
           .querySelector(".row")
           .insertAdjacentHTML("beforeend", contentCard);
+
+        const deleteBtn = document.querySelector(".btn-danger");
+        deleteBtn.addEventListener("click", deleteCard);
       });
+
+      function deleteCard(e) {
+        const deleteBtn = e.target;
+        const cardCol = deleteBtn.closest(".col-md-3");
+        cardCol.remove();
+      }
     </script>
   </body>
 </html>
