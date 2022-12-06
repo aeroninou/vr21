@@ -24,14 +24,14 @@
       .bottom-ofImage {
         position: absolute;
         bottom: auto;
-        right: 15%;
+        right: 50%;
         top: 90%;
         -webkit-text-stroke: 2px white;
       }
       .top-ofImage {
         position: absolute;
         top: center;
-        right: 25%;
+        right: 50%;
         -webkit-text-stroke: 2px white;
       }
       .card {
@@ -81,9 +81,7 @@
         </div>
 
         <div class="text-center">
-          <button type="submit" id="submitMeme" class="btn btn-primary">
-            Add Meme
-          </button>
+          <button id="submitMeme" class="btn btn-primary">Add Meme</button>
         </div>
       </form>
     </header>
@@ -106,33 +104,33 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      const addForm = document.querySelector("#addMeme div");
-      addForm.addEventListener("submit", handelAddSubmit);
+      const addForm = document.querySelector("#addMeme");
+      let addButton = document.getElementById("submitMeme");
 
-      function handelAddSubmit(e) {
+      addButton.addEventListener("click", (e) => {
         e.preventDefault();
-        const imageUrl = addForm.elements.imageUrl.value;
-        const topText = addForm.elements.textOnTop.value;
-        const bottomText = addForm.elements.textOnBottom.value;
-        addForm.reset();
+        const imageUrl = document.getElementById("imageUrl").value;
+        const topText = document.getElementById("textOnTop").value;
+        const bottomText = document.getElementById("textOnBottom").value;
 
+        addForm.reset();
         const cardData = { imageUrl, topText, bottomText };
+
         const contentCard = `<div class="col-md-3 col-lg-4">
           <div class="card">
             <div id="makeTitleOnImage">
-              <h1 class="top-ofImage">${cardData.topText}</h1>
+              <h1 class="top-ofImage">${topText}</h1>
               <img
-                src="${cardData.imageUrl}"
+                src='${imageUrl}'
               width=100%/>
-              <h1 class="bottom-ofImage">${cardData.bottomText}</h1>
+              <h1 class="bottom-ofImage">${bottomText}</h1>
             </div>
           </div>
         </div>`;
         document
           .querySelector(".row")
           .insertAdjacentHTML("beforeend", contentCard);
-        debugger;
-      }
+      });
     </script>
   </body>
 </html>
