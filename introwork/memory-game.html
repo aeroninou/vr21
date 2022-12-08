@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Memory Game</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+      .flip-card {
+        background-color: transparent;
+        width: 300px;
+        height: 200px;
+        border: 1px solid #f1f1f1;
+        perspective: 1000px; /* Remove this if you don't want the 3D effect */
+        margin: 5rem;
+      }
+
+      /* This container is needed to position the front and back side */
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+      }
+
+      /* Do an horizontal flip when you move the mouse over the flip box container */
+      /* .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      } */
+
+      /* Position the front and back side */
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+      }
+
+      /* Style the front side (fallback if image is missing) */
+      .flip-card-front {
+        background-color: #bbb;
+        color: black;
+      }
+
+      /* Style the back side */
+      .flip-card-back {
+        background-color: dodgerblue;
+        color: white;
+        transform: rotateY(180deg);
+      }
+      .title {
+        text-align: center;
+        margin-top: 100px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <!-- place navbar here -->
+    </header>
+    <main>
+      <div class="container">
+        <div class="title-bar">
+          <h1 class="title">Memory Game</h1>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    src="https://i.ebayimg.com/images/g/MjgAAOSw2OliE9eG/s-l500.jpg"
+                    alt="Avatar"
+                    style="width: 300px; height: 300px"
+                  />
+                </div>
+                <div class="flip-card-back">
+                  <img
+                    src="https://media.wired.com/photos/5f87340d114b38fa1f8339f9/master/w_1600%2Cc_limit/Ideas_Surprised_Pikachu_HD.jpg"
+                    alt="Avatar"
+                    style="width: 300px; height: 300px"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    src="https://i.ebayimg.com/images/g/MjgAAOSw2OliE9eG/s-l500.jpg"
+                    alt="Avatar"
+                    style="width: 300px; height: 300px"
+                  />
+                </div>
+                <div class="flip-card-back">
+                  <img
+                    src="https://media.wired.com/photos/5f87340d114b38fa1f8339f9/master/w_1600%2Cc_limit/Ideas_Surprised_Pikachu_HD.jpg"
+                    alt="Avatar"
+                    style="width: 300px; height: 300px"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    src="https://i.ebayimg.com/images/g/MjgAAOSw2OliE9eG/s-l500.jpg"
+                    alt="Avatar"
+                    style="width: 300px; height: 300px"
+                  />
+                </div>
+                <div class="flip-card-back">
+                  <img
+                    src="https://secure.img1-cg.wfcdn.com/im/84929271/resize-h445%5Ecompr-r85/7726/77265091/Ace+of+Diamonds+Cardboard+Standup.jpg"
+                    alt="Avatar"
+                    style="width: 300px; height: 300px"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    src="https://i.ebayimg.com/images/g/MjgAAOSw2OliE9eG/s-l500.jpg"
+                    alt="Avatar"
+                    style="width: 300px; height: 300px"
+                  />
+                </div>
+                <div class="flip-card-back">
+                  <img
+                    src="https://secure.img1-cg.wfcdn.com/im/84929271/resize-h445%5Ecompr-r85/7726/77265091/Ace+of+Diamonds+Cardboard+Standup.jpg"
+                    alt="Avatar"
+                    style="width: 300px; height: 300px"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    src="https://i.ebayimg.com/images/g/MjgAAOSw2OliE9eG/s-l500.jpg"
+                    alt="Avatar"
+                    style="width: 300px; height: 300px"
+                  />
+                </div>
+                <div class="flip-card-back">
+                  <img
+                    src="data:image/png;base64,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"
+                    alt="Avatar"
+                    style="width: 300px; height: 300px"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    src="https://i.ebayimg.com/images/g/MjgAAOSw2OliE9eG/s-l500.jpg"
+                    alt="Avatar"
+                    style="width: 300px; height: 300px"
+                  />
+                </div>
+                <div class="flip-card-back">
+                  <img
+                    src="https://i.kym-cdn.com/entries/icons/facebook/000/027/852/Screen_Shot_2018-12-12_at_1.02.39_PM.jpg"
+                    alt="Avatar"
+                    style="width: 300px; height: 300px"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    src="https://i.ebayimg.com/images/g/MjgAAOSw2OliE9eG/s-l500.jpg"
+                    alt="Avatar"
+                    style="width: 300px; height: 300px"
+                  />
+                </div>
+                <div class="flip-card-back">
+                  <img
+                    src="data:image/png;base64,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"
+                    alt="Avatar"
+                    style="width: 300px; height: 300px"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    src="https://i.ebayimg.com/images/g/MjgAAOSw2OliE9eG/s-l500.jpg"
+                    alt="Avatar"
+                    style="width: 300px; height: 300px"
+                  />
+                </div>
+                <div class="flip-card-back">
+                  <img
+                    src="https://i.kym-cdn.com/entries/icons/facebook/000/027/852/Screen_Shot_2018-12-12_at_1.02.39_PM.jpg"
+                    alt="Avatar"
+                    style="width: 300px; height: 300px"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/memory-game.js"></script>
+  </body>
+</html>
