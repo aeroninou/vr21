@@ -82,7 +82,7 @@
                   ></button>
                 </div>
                 <div class="modal-body">
-                  <form>
+                  <form id="addFormCage">
                     <div class="mb-3">
                       <label for="inputTitle1" class="form-label">Title</label>
                       <input
@@ -186,35 +186,35 @@
               ></button>
             </div>
             <div class="modal-body">
-              <form id="addCageForm">
+              <form id="updateForm">
                 <div class="mb-3">
-                  <label for="inputTitle1" class="form-label"
+                  <label for="updateTitle" class="form-label"
                     >Title</label
                   >
                   <input
                     type="text"
                     class="form-control"
-                    id="inputTitle1"
+                    id="updateTitle"
                   />
                 </div>
                 <div class="mb-3">
-                  <label for="inputDescription1" class="form-label"
+                  <label for="updateDesc" class="form-label"
                     >Description</label
                   >
                   <input
                     type="text"
                     class="form-control"
-                    id="inputDescription1"
+                    id="updateDesc"
                   />
                 </div>
                 <div class="mb-3">
-                  <label for="inputImage1" class="form-label"
+                  <label for="updateImage" class="form-label"
                     >Image</label
                   >
                   <input
                     type="url"
                     class="form-control"
-                    id="inputImage1"
+                    id="updateImage"
                   />
                 </div>
               </form>
@@ -227,7 +227,7 @@
               >
                 Close
               </button>
-              <button type="submit" id="updateCardButton" class="btn btn-primary rounded-pill">
+              <button type="submit" data-bs-dismiss="modal" id="updateCardButton" class="btn btn-primary rounded-pill">
                 Update
               </button>
             </div>
@@ -249,7 +249,7 @@
     <script>
       
       const CARD_DATA_KEY = "cageKey";
-      const addForm = document.querySelector("#addCageForm");
+      const addForm = document.querySelector("#addFormCage");
       window.addEventListener("load", addAllCards);
 
       let deleteModalBtn = document.querySelector("#deleteForeverButton");
@@ -258,24 +258,6 @@
       let updateModalBtn = document.querySelector("#updateCardButton");
       updateModalBtn.addEventListener("click", updateCard);
 
-      function updateCard(newCard){
-        let data = loadDataFromDB();
-        const findCard = data.find((cardData) => cardData.id === newCard.id);
-        console.log(findCard);
-        const cardToUpdate = document.querySelector(`#cardContainer [data-cage-id="${newCard.id}"]`);
-        console.log(cardToUpdate);
-
-        cardToUpdate.querySelector(".card-title").textContent = newCard.inputTitle;
-        cardToUpdate.querySelector(".card-desc").textContent = newCard.inputDesc;
-        cardToUpdate.querySelector(".card-img-top").setAttribute("src", newCard.imageUrl);
-
-        findCard.inputTitle = newCard.inputTitle;
-        findCard.inputDesc = newCard.inputDesc;
-        findCard.imageUrl = newCard.imageUrl;
-  
-        saveData(data);
-      }
-
       const deleteModal = document.querySelector("#deleteModal");
       const updateModal = document.querySelector("#updateModal");
       
@@ -283,7 +265,21 @@
       updateModal.addEventListener("show.bs.modal", setModalAtt);
   
       function setModalAtt(e){
-        let cardId = e.relatedTarget.closest(".card").getAttribute(`data-cage-id`);
+        //data-bs-target="#updateModal"
+        const btn = e.relatedTarget;
+        const card = btn.closest(".card");
+        
+        let cardId = card.getAttribute(`data-cage-id`);
+        console.log(btn.getAttribute(`data-bs-target`));
+        if (btn.getAttribute(`data-bs-target`) === "#updateModal"){
+          let getTitle = card.querySelector(".card-title").textContent;
+          let getDesc = card.querySelector(".card-desc").textContent;
+          let getImg = card.querySelector(".card-img-top").getAttribute("src");
+          document.getElementById("updateImage").value = getImg;
+          document.getElementById("updateTitle").value = getTitle;
+          document.getElementById("updateDesc").value = getDesc;
+        }
+        //set cardId on update modal or delete modal. 
         e.target.dataset.modalId = cardId;
         console.log(e.target.dataset.modalId);
       }
@@ -296,6 +292,7 @@
 
 
         addForm.reset();
+        console.log("form submit");
         const cardData = { imageUrl, inputTitle, inputDesc };
         cardData.id = Date.now();
         addCardtoDataBase(cardData);
@@ -372,6 +369,32 @@
         saveData(data);
         cardToDelete.remove();
       }
+
+      function updateCard(e){
+        //console.log(e.target);
+        let id = Number(document.querySelector("#updateModal").getAttribute("data-modal-id"));
+        //console.log(id);
+        let data = loadDataFromDB();
+        let findCard = data.find((cardData) => cardData.id === id);
+        console.log(findCard);
+        let cardToUpdate = document.querySelector(`#cardContainer [data-cage-id="${id}"]`);
+        console.log(cardToUpdate);
+
+        const imageUrl = document.getElementById("updateImage").value;
+        const inputTitle = document.getElementById("updateTitle").value;
+        const inputDesc = document.getElementById("updateDesc").value;
+
+        cardToUpdate.querySelector(".card-title").textContent = inputTitle;
+        cardToUpdate.querySelector(".card-desc").textContent = inputDesc;
+        cardToUpdate.querySelector(".card-img-top").setAttribute("src", imageUrl);
+
+        findCard.inputTitle = inputTitle;
+        findCard.inputDesc = inputDesc;
+        findCard.imageUrl = imageUrl;
+  
+        saveData(data);
+      }
+
       function saveData(data) {
         localStorage.setItem(CARD_DATA_KEY, JSON.stringify(data));
       }
