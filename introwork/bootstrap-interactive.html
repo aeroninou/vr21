@@ -124,7 +124,7 @@
         </div>
       </nav>
       <main>
-        <div class="row"></div>
+        <div class="row" id="cardContainer"></div>
         
       </main>
 
@@ -135,6 +135,7 @@
       tabindex="-1"
       aria-labelledby="deleteModalLabel"
       aria-hidden="true"
+      data-modal-id=""
     >
       <div class="modal-dialog">
         <div class="modal-content">
@@ -156,7 +157,7 @@
             >
               Close
             </button>
-            <button id="deleteForeverButton" class="btn btn-danger rounded-pill">Delete</button>
+            <button data-bs-dismiss="modal" id="deleteForeverButton" class="btn btn-danger rounded-pill">Delete</button>
           </div>
         </div>
       </div>
@@ -165,10 +166,11 @@
         <!-- Update Modal -->
         <div
         class="modal fade"
-        id="updateCageModal"
+        id="updateModal"
         tabindex="-1"
         aria-labelledby="updateCageModal"
         aria-hidden="true"
+        data-modal-id=""
       >
         <div class="modal-dialog">
           <div class="modal-content">
@@ -225,7 +227,7 @@
               >
                 Close
               </button>
-              <button type="submit" class="btn btn-primary rounded-pill">
+              <button type="submit" id="updateCardButton" class="btn btn-primary rounded-pill">
                 Update
               </button>
             </div>
@@ -245,13 +247,46 @@
       crossorigin="anonymous"
     ></script>
     <script>
-
-      const addForm = document.querySelector("#addCageForm");
       
-      document.getElementById("deleteForeverButton").addEventListener("click", (e) =>{
-        const deleteBtn = document.getElementsByClassName(".col-md-3");
-        console.log(deleteBtn);
-      })
+      const CARD_DATA_KEY = "cageKey";
+      const addForm = document.querySelector("#addCageForm");
+      window.addEventListener("load", addAllCards);
+
+      let deleteModalBtn = document.querySelector("#deleteForeverButton");
+      deleteModalBtn.addEventListener("click", deleteCard);
+
+      let updateModalBtn = document.querySelector("#updateCardButton");
+      updateModalBtn.addEventListener("click", updateCard);
+
+      function updateCard(newCard){
+        let data = loadDataFromDB();
+        const findCard = data.find((cardData) => cardData.id === newCard.id);
+        console.log(findCard);
+        const cardToUpdate = document.querySelector(`#cardContainer [data-cage-id="${newCard.id}"]`);
+        console.log(cardToUpdate);
+
+        cardToUpdate.querySelector(".card-title").textContent = newCard.inputTitle;
+        cardToUpdate.querySelector(".card-desc").textContent = newCard.inputDesc;
+        cardToUpdate.querySelector(".card-img-top").setAttribute("src", newCard.imageUrl);
+
+        findCard.inputTitle = newCard.inputTitle;
+        findCard.inputDesc = newCard.inputDesc;
+        findCard.imageUrl = newCard.imageUrl;
+  
+        saveData(data);
+      }
+
+      const deleteModal = document.querySelector("#deleteModal");
+      const updateModal = document.querySelector("#updateModal");
+      
+      deleteModal.addEventListener("show.bs.modal", setModalAtt);
+      updateModal.addEventListener("show.bs.modal", setModalAtt);
+  
+      function setModalAtt(e){
+        let cardId = e.relatedTarget.closest(".card").getAttribute(`data-cage-id`);
+        e.target.dataset.modalId = cardId;
+        console.log(e.target.dataset.modalId);
+      }
 
      
       document.querySelector("#add-cage").addEventListener('click', (e) => {
@@ -261,19 +296,23 @@
 
 
         addForm.reset();
-        console.log(imageUrl, inputTitle, inputDesc);
-
+        const cardData = { imageUrl, inputTitle, inputDesc };
+        cardData.id = Date.now();
+        addCardtoDataBase(cardData);
+        addCardUI(cardData);
+        
         const closeBtn = document.querySelector('[data-bs-dismiss="modal"]');
-
         closeBtn.click();
+       });
 
+       function addCardUI(cardData) {
         const contentCard = `<div class="col-md-3">
-          <div class="card">
-            <img src="${imageUrl}" />
+          <div class="card" data-cage-id=${cardData.id}>
+            <img class="card-img-top" src="${cardData.imageUrl}"/>
             <div>
-              <h3 class="card-title">${inputTitle}</h3>
-              <p>
-                ${inputDesc}
+              <h3 class="card-title">${cardData.inputTitle}</h3>
+              <p class="card-desc">
+                ${cardData.inputDesc}
               </p>
               <div class="text-center">
                 <button
@@ -290,7 +329,7 @@
                   type="button"
                   class="btn btn-dark rounded-pill"
                   data-bs-toggle="modal"
-                  data-bs-target="#updateCageModal"
+                  data-bs-target="#updateModal"
                 >
                   Update
                 </button>
@@ -298,45 +337,44 @@
             </div>
           </div>
         </div>`;
-        
+
       document.querySelector(".row").insertAdjacentHTML("beforeend", contentCard);
+      }
 
-      //   const columnCard = document.createElement('div');
-      //   columnCard.setAttribute("class", "col-md-3");
+      function addCardtoDataBase(cardData) {
+        let data = loadDataFromDB();
+        data.push(cardData);
 
-      //   const card = document.createElement('div');
-      //   card.setAttribute("class", "card");
+        //save to database
+        saveData(data);
+      }
 
-      //   const img = document.createElement('img');
-      //   img.setAttribute("src","https://www.placecage.com/c/150/114");
-      //   img.setAttribute("class", "card-img-top");
+      function addAllCards(e) {
+        let data = loadDataFromDB();
+        data.forEach((cardData) => addCardUI(cardData));
+      }
 
-      //   const cardBody = document.createElement('div');
+      function loadDataFromDB() {
+        let data = JSON.parse(localStorage.getItem(CARD_DATA_KEY));
+        if (!data) {
+          data = [];
+        }
+        return data;
+      }
 
-      //   const cardTitle = document.createElement('h5');
-      //   cardTitle.setAttribute("class", "card-title");
-      //   cardTitle.innerText = "Nick Cage";
-
-      //   const cardP = document.createElement('p');
-      //   cardP.innerText = "This is a p tag test";
-
-      //   const buttonC = document.createElement("div");
-      //   buttonC.setAttribute("class", "text-center");
-
-      //   const deleteBtn = document.createElement('button');
-
-        
-         
-      //   cardBody.append(cardTitle);
-      //   cardBody.append(cardP);
-
-      //   card.append(img);
-      //   card.append(cardBody);
-
-      //   columnCard.append(card);
-
-      //   document.querySelector(".row").append(columnCard);
-       });
+      function deleteCard(e) {
+        const cageIdtoDelete = Number(e.target.closest("#deleteModal").dataset.modalId);
+        let cardToDelete = document.querySelector(`#cardContainer [data-cage-id="${cageIdtoDelete}"]`);
+        console.log(cardToDelete);
+        console.log(cageIdtoDelete);
+        let data = loadDataFromDB();
+        data = data.filter((cardData) => cardData.id !== cageIdtoDelete);
+        saveData(data);
+        cardToDelete.remove();
+      }
+      function saveData(data) {
+        localStorage.setItem(CARD_DATA_KEY, JSON.stringify(data));
+      }
    
     </script>
   </body>
