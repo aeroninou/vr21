@@ -25,7 +25,7 @@ const createMeal = (meal) => {
 	}
 	
 	const newInnerHTML = `
-            
+
 			<div class="col-md-6">
 				<img src="${meal.strMealThumb}" alt="Meal Image">
 			</div>
@@ -55,4 +55,38 @@ const createMeal = (meal) => {
 	`;
 	
 	meal_container.innerHTML = newInnerHTML;
+}
+
+
+const mealCard = (meal) => {
+	const ingredients = [];
+	// Get all ingredients from the object. Max 20
+	for(let i = 1; i <= 20; i++) {
+		if(meal[`strIngredient${i}`]) {
+			ingredients.push(`${meal[`strIngredient${i}`]} - ${meal[`strMeasure${i}`]}`);
+		} else {
+			break; //Loop will stop when no more indgredients.
+		}
+	}
+	
+	const newCard = `
+
+        <div id=${meal.idMeal} class="card mt-3" style="width: 20rem;">
+        <img src="${meal.strMealThumb}" class="card-img-top" style="border-radius: 25%;" alt="imgae of meal">
+        <div class="card-body">
+            ${meal.strMeal ? `<h5 class="card-title">${meal.strMeal}</h5>` : ""}
+            ${meal.strArea ? `<strong>Area:</strong> ${meal.strArea}` : ""}
+        </div>
+        <ul class="list-group list-group-flush">
+            ${meal.strCategory ? `<li class="list-group-item"><strong>Category:</strong> ${meal.strCategory}</li>` : ""}
+            ${meal.strTags ? `<li class="list-group-item"><strong>Tags:</strong> ${meal.strTags.split(',').join(', ')}</li>` : ""}
+        </ul>
+        <div class="card-body">
+            <a href="#" class="card-link">Full Recipe</a>
+            ${meal.strYoutube ? `<a href="${meal.strYoutube}" target="_blank" class="card-link _blank">Video Recipe</a>` : ""}
+            
+        </div>
+        </div>`;
+	
+        foodRow.insertAdjacentHTML("beforeend", newCard);
 }
