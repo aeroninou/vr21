@@ -70,8 +70,8 @@ const mealCard = (meal) => {
 	}
 	
 	const newCard = `
-
-        <div id=${meal.idMeal} class="card mt-3" style="width: 20rem;">
+    <div data-aos="fade-up" class="col-md-3 col-sm-6">
+        <div id=${meal.idMeal} class="card m-2" style="width: 20rem;">
         <img src="${meal.strMealThumb}" class="card-img-top" style="border-radius: 25%;" alt="imgae of meal">
         <div class="card-body">
             ${meal.strMeal ? `<h5 class="card-title">${meal.strMeal}</h5>` : ""}
@@ -82,11 +82,17 @@ const mealCard = (meal) => {
             ${meal.strTags ? `<li class="list-group-item"><strong>Tags:</strong> ${meal.strTags.split(',').join(', ')}</li>` : ""}
         </ul>
         <div class="card-body">
-            <a href="#" class="card-link">Full Recipe</a>
+            <a class="card-link" onclick={}>Full Recipe</a>
             ${meal.strYoutube ? `<a href="${meal.strYoutube}" target="_blank" class="card-link _blank">Video Recipe</a>` : ""}
             
         </div>
-        </div>`;
+        </div>
+    </div>`;
 	
         foodRow.insertAdjacentHTML("beforeend", newCard);
 }
+
+
+
+
+
